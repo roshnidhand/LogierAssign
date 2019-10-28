@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1045154033327",
+    "firebase_url": "https://logr-ea4d2.firebaseio.com",
+    "project_id": "logr-ea4d2",
+    "storage_bucket": "logr-ea4d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1045154033327:android:489dac2775683f5d2cae5a",
+        "android_client_info": {
+          "package_name": "com.example.logierassig1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1045154033327-esn9e5lhq0pvprvgljark1p570dhlm1d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.logierassig1",
+            "certificate_hash": "64ee54916b197660c0020d10782eee64c383a7eb"
+          }
+        },
+        {
+          "client_id": "1045154033327-pc7q8fqmp6cpctbaqsar6587qrih6rpg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQllC1OpOyXxuHR9_DX2Vk4FTF2-Rq5Mw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1045154033327-pc7q8fqmp6cpctbaqsar6587qrih6rpg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
