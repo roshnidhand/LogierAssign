@@ -43,6 +43,7 @@ public class WelcometoLogier extends AppCompatActivity {
         });
 
 
+
         findViewById(R.id.buttonLogout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
