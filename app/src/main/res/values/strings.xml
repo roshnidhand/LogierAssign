@@ -8,7 +8,7 @@
     <string name="input_error_password"> enter password</string>
     <string name="input_error_password_length"> Enter your phone</string>
     <string name="input_error_profession"> Enter your profession</string>
-    <string name="input_error_weight"> Enter your weight</string>
+    <string name="input_error_address"> Enter your address</string>
     <string name="registration_success">user registered</string>
     <string name="title_activity_maps">Map</string>
 </resources>

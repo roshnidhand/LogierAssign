@@ -3,14 +3,10 @@ package com.example.logierassig1;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,6 +20,7 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class PhoneVerification extends AppCompatActivity {
 
@@ -42,7 +39,6 @@ public class PhoneVerification extends AppCompatActivity {
         setContentView(R.layout.activity_phone_verification);
         mAuth = FirebaseAuth.getInstance();
         editTextCode = findViewById(R.id.editTextCode);
-
 
         //getting mobile number from the previous activity
         //and sending the verification code to the number
@@ -116,13 +112,14 @@ public class PhoneVerification extends AppCompatActivity {
     };
 
 
-    private void verifyVerificationCode(String otp) {
+    private void verifyVerificationCode(String code) {
         //creating the credential
-        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId, otp);
+        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId, code);
 
         //signing the user
         signInWithPhoneAuthCredential(credential);
     }
+
 
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
         mAuth.signInWithCredential(credential)
@@ -137,12 +134,11 @@ public class PhoneVerification extends AppCompatActivity {
 
                         } else {
 
+                            //verification unsuccessful.. display an error message
 
-                            String message = "Somthing is wrong, we will fix it soon...";
+                            String message = "Something is wrong, we will fix it soon...";
 
-                            task.getException() ;
-                                message = "Invalid code entered...";
-
+                            task.getException();
 
                             Snackbar snackbar = Snackbar.make(findViewById(R.id.parent), message, Snackbar.LENGTH_LONG);
                             snackbar.setAction("Dismiss", new View.OnClickListener() {
@@ -155,8 +151,6 @@ public class PhoneVerification extends AppCompatActivity {
                         }
                     }
                 });
-
-
     }
 
 

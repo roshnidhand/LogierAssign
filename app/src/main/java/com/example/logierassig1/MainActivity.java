@@ -22,6 +22,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.AbstractCollection;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final int ERROR_DIALOG_REQUEST = 9001;
 
 
-    private EditText e1Name, e2Email, e3Password, e4Phone,e5Profession,e6Weight;
+    private EditText e1Name, e2Email, e3Password, e4Phone,e5Profession,e6Address;
     private ProgressBar progressBar;
     private Button btnlogin;
     private RadioGroup editTextGender;
@@ -50,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         e3Password = findViewById(R.id.etpassword);
         e4Phone = findViewById(R.id.etContactNum);
         e5Profession=findViewById(R.id.etProfession);
-        e6Weight=findViewById(R.id.etweight);
+        e6Address=findViewById(R.id.etaddress);
 
         editTextGender=findViewById(R.id.Rgender);
 
@@ -92,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         final String password = e3Password.getText().toString().trim();
         final String phone = e4Phone.getText().toString().trim();
         final String profession=e5Profession.getText().toString();
-        final String weight=e6Weight.getText().toString();
+        final String address=e6Address.getText().toString();
         final String gender= ((RadioButton)findViewById(editTextGender.getCheckedRadioButtonId()))
                 .getText().toString();
 
@@ -144,9 +146,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
         }
 
-        if (weight.isEmpty()) {
-            e6Weight.setError(getString(R.string.input_error_weight));
-            e6Weight.requestFocus();
+
+        if (address.isEmpty()) {
+            e6Address.setError(getString(R.string.input_error_address));
+            e6Address.requestFocus();
             return;
         }
 
@@ -165,7 +168,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     password,
                                     gender,
                                     profession,
-                                    weight
+                                    address
                                     );
 
                             FirebaseDatabase.getInstance().getReference("Users")

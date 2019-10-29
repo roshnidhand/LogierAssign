@@ -106,16 +106,16 @@
                 android:text="FEMALE" />
         </RadioGroup>
 
+
         <EditText
-            android:id="@+id/etweight"
+            android:id="@+id/etaddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Weight"
-            android:textStyle="bold">
+            android:hint="Address"
+            android:textStyle="bold"
+            tools:textStyle="bold">
 
         </EditText>
-
-
 
         <LinearLayout
             android:layout_width="wrap_content"
